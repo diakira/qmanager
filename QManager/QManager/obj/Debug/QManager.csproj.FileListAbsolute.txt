@@ -37,3 +37,43 @@ c:\users\vscordova\documents\visual studio 2015\Projects\QManager\QManager\bin\A
 c:\users\vscordova\documents\visual studio 2015\Projects\QManager\QManager\bin\Newtonsoft.Json.xml
 c:\users\vscordova\documents\visual studio 2015\Projects\QManager\QManager\obj\Debug\QManager.dll
 c:\users\vscordova\documents\visual studio 2015\Projects\QManager\QManager\obj\Debug\QManager.pdb
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\csc.exe
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\vbc.exe
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\VBCSCompiler.exe
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\QManager.dll.config
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\QManager.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\QManager.pdb
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Antlr3.Runtime.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Newtonsoft.Json.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Helpers.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Mvc.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Optimization.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Razor.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.WebPages.Deployment.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.WebPages.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.WebPages.Razor.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\WebGrease.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Helpers.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Mvc.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Optimization.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.Razor.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.WebPages.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.WebPages.Deployment.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\System.Web.WebPages.Razor.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Antlr3.Runtime.pdb
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\bin\Newtonsoft.Json.xml
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\obj\Debug\QManager.dll
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\obj\Debug\QManager.pdb
+C:\Users\VSCordova\Source\Repos\qmanager\QManager\QManager\obj\Debug\QManager.csprojResolveAssemblyReference.cache
