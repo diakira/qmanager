@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>QManager</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    @*<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.light_green-blue.min.css" />*@
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-blue.min.css" />
+
+    <style>
+        html, body {
+            font-family: 'Roboto', 'Helvetica', sans-serif;
+        }
+
+        .demo-cell {
+            background-color: #BDBDBD;
+            height: 200px;
+            margin: 8px;
+        }
+
+        #sidebar a {
+            text-align: left;
+        }
+
+        main {
+            background-color: #F5F5F5;
+        }
+
+            main section {
+                margin: 30px 10px 0px 10px !important;
+                background-color: white;
+            }
+
+        .demo-charts {
+            align-items: center;
+        }
+
+        .demo-chart:nth-child(1) {
+            color: #ACEC00;
+        }
+
+        .demo-chart:nth-child(2) {
+            color: #00BBD6;
+        }
+
+        .demo-chart:nth-child(3) {
+            color: #BA65C9;
+        }
+
+        .demo-chart:nth-child(4) {
+            color: #EF3C79;
+        }
+
+        .demo-graphs {
+            padding: 16px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .demo-graph:nth-child(1) {
+            color: #00b9d8;
+        }
+
+        .demo-graph:nth-child(2) {
+            color: #d9006e;
+        }
+
+        .mdl-list__item--number {
+            font-size: 30px;
+            margin-right: 15px;
+        }
+
+        .tile {
+            cursor: pointer;
+            text-align: center;
+        }
+
+            .tile .material-icons {
+                font-size: 100px;
+                color: white;
+            }
+
+        #tile_fila {
+            background-color: #303F9F;
+        }
+
+        #tile_usuario {
+            background-color: #8BC34A;
+        }
+
+        #tile_estatistica {
+            background-color: #FF5722;
+        }
+
+        .tile_title {
+            font-size: x-large;
+            color: white;
+            position: relative;
+            bottom: 0;
+        }
+
+        .mdl-layout-title a {
+            color: #fff;
+        }
+
+        #tiles a {
+            text-decoration: none;
+        }
+    </style>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
+
+<body style="height:100%">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
+        <header class="mdl-layout__header ">
+            <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer mdl-layout-title"><a href="@Url.Action("Index","Home")">Home</a> <span id="page_title">@ViewBag.Title </span></div>
+            </div>
+        </header>
+
+        <div id="sidebar" class="mdl-layout__drawer">
+            <span class="mdl-layout-title"><img src="~/Layout/qManager-logo-BI.png" alt="qManager" /></span>
+            <nav class="mdl-navigation">
+                <a id="home" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Home")"><i class="material-icons">home</i> Home</a>
+                <a id="fila" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Fila")"><i class="material-icons">list</i> Fila</a>
+                <a id="usuario" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Usuario")"><i class="material-icons">account_box</i> Usuários</a>
+                <a id="estatistica" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Estatistica")"><i class="material-icons">show_chart</i> Estatísticas</a>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            @RenderSection("scripts", required: false)
+        })
+    </script>
+
+</body>
+</html>

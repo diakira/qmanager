@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "QManager";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>QManager</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.light_green-blue.min.css" />
+    <style>
+        html, body {
+            font-family: 'Roboto', 'Helvetica', sans-serif;
+        }
+
+        main {
+            background-color: #F5F5F5;
+        }
+
+            main section {
+                margin: 30px 10px 0px 10px !important;
+                background-color: white;
+            }
+    </style>
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm("Acessar", "Login", FormMethod.Post))
+    {
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">QManager</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                </div>
+            </header>
+
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="mdl-grid">
+                        <div class="mdl-layout-spacer"></div>
+                        <div class="mdl-cell mdl-cell--3-col mdl-typography--text-center mdl-shadow--6dp" style="background-color:white; padding:20px">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="text-align:center">
+                                <input class="mdl-textfield__input" type="text" id="nome">
+                                <label class="mdl-textfield__label" for="nome">Usuário</label>
+                            </div>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="password" id="nome">
+                                <label class="mdl-textfield__label" for="nome">Senha</label>
+                            </div>
+                            <div class="mdl-layout-spacer"></div>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                Entrar
+                            </button>
+
+                        </div>
+                        <div class="mdl-layout-spacer"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    }
+</body>
+</html>
