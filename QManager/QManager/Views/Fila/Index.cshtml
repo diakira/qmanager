@@ -2,47 +2,85 @@
     ViewBag.Title = "> Fila";
 }
 
-
 <script type="text/javascript">
     $(function () {
         $.getJSON("@Url.Content("~/Mock/Usuario.json")", function (data) {
-            //$("#tabela .loading").fadeOut(function () {
-            //    $(this).remove();
-            //});
+            $("#tabela").html("");
             for (var i = 0; i < data.length; i++) {
 
-                $("#tabela").append('<li class="mdl-list__item mdl-list__item--two-line">'
-                              + '<span class="mdl-list__item--number">'
+                $("#tabela").append(
+                              '<li class="mdl-list__item mdl-list__item--three-line">'
+                               + '<span class="mdl-list__item--number">'
+                               +'<a href="@Url.Action("Remover","Fila")?id='+data[i].ID+'">'
+                               +'<div id="tt'+i+'" class="icon material-icons fila_delete">delete_forever</div>'
+                               +'<div class="mdl-tooltip" for="tt'+i+'">'
+                               +'  Remover da fila'
+                               +'</div>'
+                               +'</a>'
+                              + '</span>'
+                                   + '<span class="mdl-list__item--number">'
                                  + (i + 1) + 'º'
                               + '</span>'
-                              + '<span class="mdl-list__item-primary-content">'
-                              + '    <i class="material-icons mdl-list__item-avatar">person</i>'
-                              + '    <span>'
-                              + data[i].nome
-                              + '    </span>'
-                              + '    <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">'
+                              + '   <span class="mdl-list__item-primary-content">'
+                              + '       <i class="material-icons mdl-list__item-avatar">person</i>'
+                              + '   <span>'
+                               + data[i].Nome
+                              + '</span>'
+                              + '<span class="mdl-list__item-text-body">'
+                              + 'Chegou às '
+                              + data[i].DataHoraChegada
+                              + ' com '
+                              + data[i].QuantidadePessoas
+                              + ' pessoas'
+                              + '</span>'
+                              + '</span>'
+                              + '<span class="mdl-list__item-secondary-content">'
+                                   + '    <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">'
                               + '    chamar'
                               + '    </span>'
-                              + '    <span class="mdl-list__item-sub-title">'
-                              + 'Chegou às '
-                              + data[i].dataChegada
-                              + ' com '
-                              + data[i].numPessoas
-                              + ' pessoas</span>'
                               + '</span>'
                               + '</li>'
                 );
             };
         });
+
+        var dialog = document.querySelector('dialog');
+        var showDialogButton = document.querySelector('#show-dialog');
+        if (!dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+        dialog.querySelector('.close').addEventListener('click', function () {
+            dialog.close();
+        });
+
+        var mensagem = "@ViewBag.Mensagem"
+
+        if (mensagem != "") {
+            dialog.showModal();
+        }
+
     });
 </script>
 
-
 <div id="fila_content" class="page-content mdl-grid">
-
+    
     <section class="mdl-cell mdl-cell--12-col mdl-shadow--2dp">
-        <ul id="tabela" class="demo-list-two mdl-list">
-            <img src="~/Layout/loading.svg" class="loading" style="width: 100px;" alt="loading" />
-        </ul>
+        <div class="mdl-cell mdl-cell--7-col">
+            <ul id="tabela" class="demo-list-two mdl-list"></ul>
+        </div>
     </section>
+
+
+    <dialog class="mdl-dialog">
+        <div class="mdl-dialog__content">
+            <p>
+                @ViewBag.Mensagem
+            </p>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent close">
+                <i class="material-icons">done</i> OK
+            </button>
+        </div>
+    </dialog>
 </div>

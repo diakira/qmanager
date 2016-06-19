@@ -1,37 +1,78 @@
-﻿
+﻿@model QManager.Models.Usuario
+
 @{
     ViewBag.Title = "> Usuários";
 }
 
+<script>
+
+    $(function () {
+
+        var dialog = document.querySelector('dialog');
+        var showDialogButton = document.querySelector('#show-dialog');
+        if (!dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+        dialog.querySelector('.close').addEventListener('click', function () {
+            dialog.close();
+        });
+
+        var mensagem = '@ViewBag.Mensagem'
+
+        if (mensagem != "") {
+            dialog.showModal();
+        }
+    })
+</script>
+
 <div id="usuario_content" class="page-content">
+    @using (Html.BeginForm("Adicionar", "Usuario"))
+    {
+       
+        <div class="mdl-grid">
+            <section class="mdl-cell mdl-cell--12-col mdl-shadow--2dp  mdl-typography--text-center">
 
-    <div class="mdl-grid">
-        <section class="mdl-cell mdl-cell--12-col mdl-shadow--2dp  mdl-typography--text-center">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                        @Html.TextBoxFor(m => m.Nome, new { @class = "mdl-textfield__input" })
+                        <label class="mdl-textfield__label" for="nome">Nome</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                        @Html.TextBoxFor(m => m.QuantidadePessoas, new { @class = "mdl-textfield__input", @pattern = "-?[0-9]*(\\.[0-9]+)?" })
+                        <label class="mdl-textfield__label" for="quantidade">Quantidade de Pessoas</label>
+                        <span class="mdl-textfield__error">Favor digitar somente número</span>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
+                        @Html.HiddenFor(m => m.DataHoraChegada)
+                        <label>@Model.DataHoraChegada</label>
+                    </div>
+                </div>
 
-            <div class="mdl-cell mdl-cell--12-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
-                    <input class="mdl-textfield__input" type="text" id="nome">
-                    <label class="mdl-textfield__label" for="nome">Nome</label>
+                <div class="mdl-cell mdl-cell--12-col">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        <i class="material-icons">add_circle</i> Adicionar
+                    </button>
                 </div>
-            </div>
-            <div class="mdl-cell mdl-cell--12-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
-                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="quantidade">
-                    <label class="mdl-textfield__label" for="quantidade">Quantidade de Pessoas</label>
-                    <span class="mdl-textfield__error">Favor digitar somente número</span>
-                </div>
-            </div>
-            <div class="mdl-cell mdl-cell--12-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
-                    <label for="data">20/06/2016 20:23</label>
-                </div>
-            </div>
+            </section>
 
-            <div class="mdl-cell mdl-cell--12-col">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    <i class="material-icons">add_circle</i> Adicionar
-                </button>
-            </div>
-        </section>
-    </div>
+            <dialog class="mdl-dialog">
+                <div class="mdl-dialog__content">
+                    <p>
+                        @ViewBag.Mensagem
+                    </p>
+                </div>
+                <div class="mdl-dialog__actions">
+                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent close">
+                        <i class="material-icons">done</i> OK
+                    </button>
+                </div>
+            </dialog>
+        </div>
+
+      
+    }   
 </div>
