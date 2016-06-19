@@ -15,12 +15,14 @@
         }
         dialog.querySelector('.close').addEventListener('click', function () {
             dialog.close();
+            $(".mdl-dialog").hide();
         });
 
         var mensagem = '@ViewBag.Mensagem'
 
         if (mensagem != "") {
             dialog.showModal();
+            $(".mdl-dialog").show();
         }
     })
 </script>
@@ -28,7 +30,7 @@
 <div id="usuario_content" class="page-content">
     @using (Html.BeginForm("Adicionar", "Usuario"))
     {
-       
+
         <div class="mdl-grid">
             <section class="mdl-cell mdl-cell--12-col mdl-shadow--2dp  mdl-typography--text-center">
 
@@ -40,7 +42,7 @@
                 </div>
                 <div class="mdl-cell mdl-cell--12-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">
-                        @Html.TextBoxFor(m => m.QuantidadePessoas, new { @class = "mdl-textfield__input", @pattern = "-?[0-9]*(\\.[0-9]+)?" })
+                        @Html.TextBoxFor(m => m.QuantidadePessoas, new { @class = "mdl-textfield__input", @pattern = "-?[0-9]*(\\.[0-9]+)?", @type="number" })
                         <label class="mdl-textfield__label" for="quantidade">Quantidade de Pessoas</label>
                         <span class="mdl-textfield__error">Favor digitar somente número</span>
                     </div>
@@ -59,7 +61,7 @@
                 </div>
             </section>
 
-            <dialog class="mdl-dialog">
+            <dialog class="mdl-dialog" style="display:none">
                 <div class="mdl-dialog__content">
                     <p>
                         @ViewBag.Mensagem
@@ -72,7 +74,5 @@
                 </div>
             </dialog>
         </div>
-
-      
-    }   
+    }
 </div>

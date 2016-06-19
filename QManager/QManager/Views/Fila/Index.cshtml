@@ -11,12 +11,12 @@
                 $("#tabela").append(
                               '<li class="mdl-list__item mdl-list__item--three-line">'
                                + '<span class="mdl-list__item--number">'
-                               +'<a href="@Url.Action("Remover","Fila")?id='+data[i].ID+'">'
-                               +'<div id="tt'+i+'" class="icon material-icons fila_delete">delete_forever</div>'
-                               +'<div class="mdl-tooltip" for="tt'+i+'">'
-                               +'  Remover da fila'
-                               +'</div>'
-                               +'</a>'
+                               + '<a href="@Url.Action("Remover","Fila")?id=' + data[i].ID + '">'
+                               + '<div id="tt' + i + '" class="icon material-icons fila_delete">delete_forever</div>'
+                               + '<div class="mdl-tooltip" for="tt' + i + '">'
+                               + '  Remover da fila'
+                               + '</div>'
+                               + '</a>'
                               + '</span>'
                                    + '<span class="mdl-list__item--number">'
                                  + (i + 1) + 'º'
@@ -27,8 +27,9 @@
                                + data[i].Nome
                               + '</span>'
                               + '<span class="mdl-list__item-text-body">'
-                              + 'Chegou às '
+                              + 'Chegou '
                               + data[i].DataHoraChegada
+                              + ' às '
                               + ' com '
                               + data[i].QuantidadePessoas
                               + ' pessoas'
@@ -51,19 +52,21 @@
         }
         dialog.querySelector('.close').addEventListener('click', function () {
             dialog.close();
+            $(".mdl-dialog").hide();
         });
 
         var mensagem = "@ViewBag.Mensagem"
 
         if (mensagem != "") {
             dialog.showModal();
+            $(".mdl-dialog").show();
         }
 
     });
 </script>
 
 <div id="fila_content" class="page-content mdl-grid">
-    
+
     <section class="mdl-cell mdl-cell--12-col mdl-shadow--2dp">
         <div class="mdl-cell mdl-cell--7-col">
             <ul id="tabela" class="demo-list-two mdl-list"></ul>
@@ -71,7 +74,7 @@
     </section>
 
 
-    <dialog class="mdl-dialog">
+    <dialog class="mdl-dialog" style="display:none">
         <div class="mdl-dialog__content">
             <p>
                 @ViewBag.Mensagem
