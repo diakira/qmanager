@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using QManager.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,20 +13,17 @@ namespace QManager.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            List<Usuario> listaUsuario = new List<Usuario>();
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+            using (StreamReader sr = new StreamReader(Server.MapPath("~/Mock/Usuario.json"), true))
+            {
+                listaUsuario = JsonConvert.DeserializeObject<List<Usuario>>(sr.ReadToEnd());
 
-            return View();
-        }
+                sr.Close();
+            }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-            
+            ViewBag.TotalFila = string.Format("{0} pessoa(s)", listaUsuario.Count());
+
             return View();
         }
     }

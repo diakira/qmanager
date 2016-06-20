@@ -27,16 +27,15 @@
                                + data[i].Nome
                               + '</span>'
                               + '<span class="mdl-list__item-text-body">'
-                              + 'Chegou '
+                              + 'Chegou em '
                               + data[i].DataHoraChegada
-                              + ' às '
-                              + ' com '
+                                + ' com '
                               + data[i].QuantidadePessoas
                               + ' pessoas'
                               + '</span>'
                               + '</span>'
                               + '<span class="mdl-list__item-secondary-content">'
-                                   + '    <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">'
+                              + '    <span class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="Chamar(\'' + data[i].Nome + '\')">'
                               + '    chamar'
                               + '    </span>'
                               + '</span>'
@@ -46,10 +45,7 @@
         });
 
         var dialog = document.querySelector('dialog');
-        var showDialogButton = document.querySelector('#show-dialog');
-        if (!dialog.showModal) {
-            dialogPolyfill.registerDialog(dialog);
-        }
+
         dialog.querySelector('.close').addEventListener('click', function () {
             dialog.close();
             $(".mdl-dialog").hide();
@@ -61,13 +57,28 @@
             dialog.showModal();
             $(".mdl-dialog").show();
         }
-
     });
+
+    function Chamar(nome) {
+
+        $("#mensagemDialog").text("Você chamou " + nome);
+        var dialog = document.querySelector('dialog#dialogChamar');
+        var showDialogButton = document.querySelector('#show-dialog');
+       
+        dialog.querySelector('.close').addEventListener('click', function () {
+            dialog.close();
+            $(".mdl-dialog").hide();
+        });
+
+        dialog.showModal();
+        $("#dialogChamar").show();
+    };
 </script>
 
 <div id="fila_content" class="page-content mdl-grid">
 
     <section class="mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+
         <div class="mdl-cell mdl-cell--7-col">
             <ul id="tabela" class="demo-list-two mdl-list"></ul>
         </div>
@@ -87,3 +98,17 @@
         </div>
     </dialog>
 </div>
+
+<dialog id="dialogChamar" class="mdl-dialog" style="display:none">
+    <div class="mdl-dialog__content">
+        <p>
+            <span id="mensagemDialog">
+            </span>
+        </p>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent close">
+            <i class="material-icons">done</i> OK
+        </button>
+    </div>
+</dialog>
