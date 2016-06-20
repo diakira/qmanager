@@ -97,6 +97,10 @@
             background-color: #FF5722;
         }
 
+        #tile_about {
+            background-color: #FFC107;
+        }
+
         .tile_title {
             font-size: x-large;
             color: white;
@@ -153,7 +157,7 @@
     <script scr="http://ajax.aspnetcdn.com/ajax/mvc/4.0/jquery.validate.unobtrusive.min.js"></script>
 </head>
 
-<body style="height:100%">    
+<body style="height:100%">
     <div style="display:none" id="loader">
         <img src="~/Layout/loading.svg" class="loading" style="width: 100px;" alt="loading" />
     </div>
@@ -182,6 +186,7 @@
                 <a id="fila" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Fila")"><i class="material-icons">list</i> Fila</a>
                 <a id="usuario" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Usuario")"><i class="material-icons">account_box</i> Usuários</a>
                 <a id="estatistica" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","Estatistica")"><i class="material-icons">show_chart</i> Estatísticas</a>
+                <a id="about" class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" href="@Url.Action("Index","About")"><i class="material-icons">people</i> Sobre Nós</a>
             </nav>
         </div>
 
